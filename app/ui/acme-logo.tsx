@@ -1,5 +1,12 @@
+/*
+ * @Author: Mr. Chao
+ * @Date: 2024-04-17 15:05:02
+ * @LastEditors: Mr. Chao
+ * @LastEditTime: 2024-04-17 16:05:22
+ * @Description: 
+ */
 import { GlobeAltIcon } from '@heroicons/react/24/outline';
-import { lusitana } from '@/app/ui/fonts';
+import { lusitana } from '@/app/ui/font';
 
 export default function AcmeLogo() {
   return (
