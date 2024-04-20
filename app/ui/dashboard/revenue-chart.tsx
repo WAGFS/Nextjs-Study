@@ -1,3 +1,10 @@
+/*
+ * @Author: Mr. Chao
+ * @Date: 2024-04-17 15:05:02
+ * @LastEditors: Mr. Chao
+ * @LastEditTime: 2024-04-20 18:18:10
+ * @Description: 
+ */
 import { generateYAxis } from '@/app/lib/utils';
 import { CalendarIcon } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
@@ -17,20 +24,20 @@ export default async function RevenueChart({
   const chartHeight = 350;
   // NOTE: comment in this code when you get to this point in the course
 
-  // const { yAxisLabels, topLabel } = generateYAxis(revenue);
+  const { yAxisLabels, topLabel } = generateYAxis(revenue);
 
-  // if (!revenue || revenue.length === 0) {
-  //   return <p className="mt-4 text-gray-400">No data available.</p>;
-  // }
+  if (!revenue || revenue.length === 0) {
+    return <p className="mt-4 text-gray-400">No data available.</p>;
+  }
 
   return (
     <div className="w-full md:col-span-4">
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
         Recent Revenue
       </h2>
-      {/* NOTE: comment in this code when you get to this point in the course */}
+      {/* 注意：当您到达课程的这一点时，请在此代码中发表评论 */}
 
-      {/* <div className="rounded-xl bg-gray-50 p-4">
+      <div className="rounded-xl bg-gray-50 p-4">
         <div className="sm:grid-cols-13 mt-0 grid grid-cols-12 items-end gap-2 rounded-md bg-white p-4 md:gap-4">
           <div
             className="mb-6 hidden flex-col justify-between text-sm text-gray-400 sm:flex"
@@ -59,7 +66,7 @@ export default async function RevenueChart({
           <CalendarIcon className="h-5 w-5 text-gray-500" />
           <h3 className="ml-2 text-sm text-gray-500 ">Last 12 months</h3>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
