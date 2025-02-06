@@ -1,10 +1,3 @@
-/*
- * @Author: Mr. Chao
- * @Date: 2024-04-17 18:57:06
- * @LastEditors: Mr. Chao
- * @LastEditTime: 2024-04-20 18:24:54
- * @Description:
- */
 import { Card } from '@/app/ui/dashboard/cards';
 import RevenueChart from '@/app/ui/dashboard/revenue-chart';
 import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
@@ -19,10 +12,10 @@ export default async function Page() {
   const revenue = await fetchRevenue();
   const latestInvoices = await fetchLatestInvoices();
   const {
+    numberOfCustomers,
+    numberOfInvoices,
     totalPaidInvoices,
     totalPendingInvoices,
-    numberOfInvoices,
-    numberOfCustomers,
   } = await fetchCardData();
   return (
     <main>
@@ -33,7 +26,11 @@ export default async function Page() {
         <Card title="已收款" value={totalPaidInvoices} type="collected" />
         <Card title="待处理" value={totalPendingInvoices} type="pending" />
         <Card title="总发票数" value={numberOfInvoices} type="invoices" />
-        <Card title="总客户数" value={numberOfCustomers} type="customers" />
+        <Card
+          title="总客户数"
+          value={numberOfCustomers}
+          type="customers"
+        />
       </div>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
         <RevenueChart revenue={revenue} />
